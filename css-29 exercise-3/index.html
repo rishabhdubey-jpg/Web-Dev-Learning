@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 3</title>
+    <style>
+        .box {
+            height: 410px;
+            width: 323px;
+            margin: 35px;
+            padding: 2px;
+            border: 2px solid #1e1d1dc9;
+            border-radius: 20px;
+            position: relative;
+            z-index: 1;
+            background-color: rgba(219, 218, 213, 0.533);
+            left: 37%;
+        }
+
+        div img {
+            margin: 2px;
+            padding: 2px;
+            height: 200px;
+            width: 315px;
+            border-radius: 20px;
+        }
+
+        .bar {
+            position: relative;
+            left: 15px;
+            margin: 10px;
+            color: gray;
+        }
+
+        .bar #one{
+            position: relative;
+            right: 10px;
+            /* text-align: start; */
+        }
+        .bar #two {
+            text-align: center;
+            /* position: relative;
+            left: 30px; */
+        }
+        
+        .bar #three {
+            /* text-align: end; */
+            position: relative;
+            left: 16px;
+        }
+        
+        h2 {
+            position: relative;
+            left: 10px;
+            font: bold;
+        }
+
+        .content {
+            color: gray;
+            margin: 13px;
+        }
+
+        .last button {
+            position: relative;
+            left: 34%;
+            color: rgb(59, 59, 154);
+            /* font: icon; */
+            border-radius: 20px;
+        }
+        h1{
+            margin: 2px;
+            padding: 0;
+            text-align: center;
+            font-style:oblique;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- create a card which contains a card image. Write it's html and css code to design that card. -->
+     <h1>TheZora | Studio Management Software</h1>
+    <div class="box">
+
+        <div class="photo">
+            <img src="img.png" alt="Image">
+        </div>
+
+        <div class="bar">
+            <span id="one">Face-Rec</span>
+            <span id="two">QR Access</span>
+            <span id="three">Managing Clients</span>
+        </div>
+
+        <h2>Studio Management Software</h2>
+
+        <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi optio aperiam exercitationem dolore et
+            omnis!
+        </div>
+
+        <div class="last">
+            <button>Read More</button>
+            <!-- <span>Read More</span> -->
+        </div>
+    </div>
+
+</body>
+
+</html>
