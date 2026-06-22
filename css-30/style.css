@@ -1,0 +1,40 @@
+:root {
+    /* Global Variables */
+
+    --color: rgb(86, 86, 245);
+    --seccolor: rgb(164, 153, 241);
+    --defpad: 23px;
+    --defop: 0.2;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.nav {
+    background-color: var(--color);
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    opacity: var(--defop);
+    list-style: none;
+    padding: var(--defpad);
+    border: 2px solid var(--seccolor);
+}
+
+ul li:first-child {
+    --color: rgba(179, 121, 212, 0.955);
+    /* Local Variable */
+    background-color: var(--color, blue);
+    /* Here blue is a secondary option, in case the color variable is not found. */
+}
+
+.container {
+    background-color: var(--seccolor);
+}
