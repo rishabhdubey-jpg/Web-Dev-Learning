@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.container{
+    width: 100vw;
+    height: 80vh;
+    border: 2px solid dimgray;
+}
+
+.box{
+    width: 50px;
+    height: 50px;
+    background-color: lightgreen;
+    border: 2px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* transform: rotate(0.5turn); */
+    /* transform: rotateZ(9deg); */
+
+    /* transform: scale(1.6); */
+    /* transform: scaleY(1.5); */
+
+    /* transform: skew(5deg); */
+    /* transform: skewY(35deg); */
+    /* transform skew is not working for Z - axis. */
+
+    /* transform: translateY(100%) skew(40deg) translateY(45%); */
+    /* translate property is mostly used to hide the navbar as:
+    transform: translateY(-100%) skew(40deg) translateY(-45%); */
+
+    /* To rotate something about any specific point we use orgin property.  */
+}
