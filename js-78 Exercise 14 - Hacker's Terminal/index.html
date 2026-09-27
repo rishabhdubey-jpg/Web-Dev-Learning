@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacking Simulator</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 30px;
+            background: green;
+            color: black;
+            font-family: monospace;
+            font-size: 20px;
+        }
+
+        .terminal {
+            line-height: 1.8;
+        }
+
+        .dots {
+            display: inline-block;
+            width: 30px;
+            overflow: hidden;
+            animation: blink 1s steps(4, end) infinite;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 0;
+            }
+
+            50% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Create a hacking simulator which has green background and it shows
+    these messages with random delay of 1 to 7 seconds
+
+    Initializing Hacking...
+    Reading your Files...
+    Password files Detected...
+    Sending all passwords and personal files to server...
+    Cleaning up...
+
+    The three dots must blink so that it looks like a real terminal
+    -->
+    
+    <script src="script.js"></script>
+</body>
+</html>
