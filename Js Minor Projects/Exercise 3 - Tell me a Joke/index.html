@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell me a Joke</title>
+</head>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+
+    #jokeContainer {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        max-width: 600px;
+    }
+
+</style>
+<body>
+    <!-- elem.inner HTML is used to populate a div With HTML. Search online about this method and create a website with a div tag containing a random joke given an array of jokes. Use Math.random and fetch jokes from the internet (use any website to create the array) Your website should show a random joke on each reload. Min length of your jokes array should be 10. -->
+     
+    <div id="jokeContainer"></div>
+    <script>
+        const jokes = [
+            "Why don't scientists trust atoms? Because they make up everything!",
+            "Why did the scarecrow win an award? Because he was outstanding in his field!",
+            "Why don't skeletons fight each other? They don't have the guts.",
+            "What do you call fake spaghetti? An impasta!",
+            "Why did the bicycle fall over? Because it was two-tired!",
+            "Why did the math book look sad? Because it had too many problems.",
+            "What do you call cheese that isn't yours? Nacho cheese!",
+            "Why did the tomato turn red? Because it saw the salad dressing!",
+            "Why did the golfer bring two pairs of pants? In case he got a hole in one.",
+            "What do you call a bear with no teeth? A gummy bear!"
+        ];
+
+        const randomIndex = Math.floor(Math.random() * jokes.length);
+        const randomJoke = jokes[randomIndex];
+
+        document.getElementById("jokeContainer").innerHTML = randomJoke;
+    </script>
+
+</body>
+</html>

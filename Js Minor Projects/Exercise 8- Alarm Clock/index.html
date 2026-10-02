@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            font-family: "Segoe UI", Arial, sans-serif;
+
+            background:
+                radial-gradient(circle at top left, #4f46e5 0%, transparent 35%),
+                radial-gradient(circle at bottom right, #9333ea 0%, transparent 35%),
+                #0f172a;
+
+            color: #fff;
+        }
+
+        /* Main Card */
+        #alarm-container {
+            width: 450px;
+            max-width: 90%;
+
+            padding: 40px;
+
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+
+            border-radius: 20px;
+
+            text-align: center;
+
+            backdrop-filter: blur(15px);
+
+            box-shadow:
+                0 20px 50px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        #alarm-container:hover {
+            transform: translateY(-5px);
+
+            box-shadow:
+                0 25px 60px rgba(0, 0, 0, 0.5),
+                0 0 30px rgba(139, 92, 246, 0.25);
+        }
+
+        #time {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        input[type="time"] {
+            padding: 10px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            border: none;
+            background-color: #4f46e5;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4338ca;
+        }
+
+
+    </style>
+</head>
+<body>
+    <!-- The HTML Audio Element Interface can be used to play audio in the browser. Create an alarm clock which displays time and plays sound at a user-specified time. -->
+
+    <div id="alarm-container">
+        <h1>Alarm Clock</h1>
+        <p id="time"></p>
+        <input type="time" id="alarm-time">
+        <button onclick="setAlarm()">Set Alarm</button>
+    </div>
+
+    <script>
+        // Get the current time and display it
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('time').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        // Set an alarm for a specific time
+        function setAlarm() {
+            const alarmTime = document.getElementById('alarm-time').value;
+            const [alarmHours, alarmMinutes] = alarmTime.split(':').map(Number);
+            const now = new Date();
+            const alarmDate = new Date(now.getFullYear(), now.getMonth(), now.getDate(), alarmHours, alarmMinutes, 0);
+
+            if (alarmDate < now) {
+                alert('Please set a future time for the alarm.');
+                return;
+            }
+
+            const timeUntilAlarm = alarmDate - now;
+            setTimeout(() => {
+                playAlarmSound();
+                alert('Alarm ringing!');
+            }, timeUntilAlarm);
+        }
+
+        // Play the alarm sound
+        function playAlarmSound() {
+            const audio = new Audio("alarm.mp3"); // Make sure to have an alarm.mp3 file in the same directory
+            audio.play();
+        }
+
+        // Update the time every second
+        setInterval(updateTime, 1000);
+
+    </script>
+</body>
+</html>
