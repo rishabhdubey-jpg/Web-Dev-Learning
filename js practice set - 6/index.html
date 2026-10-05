@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let age = prompt("Enter your Age?");
+        confirm("Do you want to see the prompt again?", BeforeUnloadEvent)
+        {
+            if (age < 0) {
+                console.error("You entered invalid number")
+            }
+            else if (age >= 18) {
+                alert("You can drive!")
+            }
+            else {
+                alert("You cannot drive!!")
+            }
+        }
+        // {
+        //     if (age > 4) {
+        //         location.href = "https://www.google.com/"
+        //     }
+        // }
+        {
+            if (age == 5) {
+                document.body.style.backgroundColor = "yellow";
+            }
+        }
+        {
+            if (age == 10) {
+                document.body.style.backgroundColor = "red";
+            }
+        }
+        {
+            if (age == 15) {
+                document.body.style.backgroundColor = "green";
+            }
+        }
+    </script>
+</body>
+
+</html>
