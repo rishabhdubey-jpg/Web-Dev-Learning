@@ -1,0 +1,27 @@
+<!--  Async Array Mapping:
+ Write an asynchronous function that takes an array of numbers and returns a new array of Promises where each number
+is multiplied by 2 after a delay of 500 milliseconds. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function asyncMultiplyByTwo(arr) {
+            return arr.map(num => new Promise(resolve => {
+                setTimeout(() => {
+                    resolve(num * 2);
+                }, 500);
+            }));
+        }
+        console.log(asyncMultiplyByTwo([1, 2, 3, 4, 5])); // Returns an array of Promises
+    </script>
+</body>
+
+</html>

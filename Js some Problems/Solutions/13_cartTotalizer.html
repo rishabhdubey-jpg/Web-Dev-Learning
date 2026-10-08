@@ -1,0 +1,70 @@
+<!-- The Shopping Cart Totalizer:
+    You are working on an e-commerce website, and you need to calculate the total cost of items in the shopping cart. Implement a function named calculateTotal that takes an array of products with prices and quantities and returns the total cost. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Shopping Cart Totalizer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        #cart-totalizer {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.2em;
+        }
+
+        #total-cost {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cart-totalizer">
+        <h1>Shopping Cart Totalizer</h1>
+        <p>Calculate the total cost of items in your shopping cart.</p>
+        <p id="total-cost">Total: $0.00</p>
+    </div>
+
+    <script>
+        function calculateTotal(cart) {
+            let total = 0;
+            for (let item of cart) {
+                total += item.price * item.quantity;
+            }
+            return total;
+        }
+
+        // Example usage:
+        const shoppingCart = [
+            { name: "Laptop", price: 999.99, quantity: 1 },
+            { name: "Mouse", price: 25.50, quantity: 2 },
+            { name: "Keyboard", price: 45.00, quantity: 1 }
+        ];
+
+        const total = calculateTotal(shoppingCart);
+        document.getElementById("total-cost").textContent = `Total: $${total.toFixed(2)}`;
+
+    </script>
+</body>
+
+</html>
