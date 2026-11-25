@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color: rgb(214, 202, 202);
+    --seccolor: rgb(146, 146, 146);
+    --another-color: rgb(168, 204, 201);
+    --decoration-color: rgba(46, 11, 11, 0.952);
+    --main-color: rgb(224, 224, 224);
+    --defpad: 15px;
+    --defop: 0.5;
+}
+
+body {
+    background-color: var(--seccolor);
+}
+
+.nav {
+    background-color: var(--color);
+}
+
+.nav li:hover {
+    background-color: var(--another-color);
+    cursor: pointer;
+    border-radius: 20px;
+
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    opacity: var(--defop);
+    list-style: none;
+    font-size: 25px;
+    margin: 10px;
+    padding: var(--defpad);
+}
+
+h1 {
+    text-align: center;
+    color: var(--decoration-color);
+}
+
+.jogi {
+    text-align: center;
+    margin: 23px 300px;
+    padding: var(--defpad);
+    font-style: inherit;
+    font-size: 20px;
+    color: rgb(129, 110, 110);
+    border: 5px solid var(--main-color);
+    height: auto;
+    width: 50vw;
+    background-color: var(--another-color);
+    border-radius: 25px;
+}
+
+.jogi p {
+    margin-top: 20px;
+}

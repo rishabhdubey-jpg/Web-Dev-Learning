@@ -1,0 +1,23 @@
+body{
+    background-color: red;
+}
+
+@media only screen and (orientation: portrait){
+    body{
+        border: 2px solid lightgreen;
+    }
+}
+
+@media only screen and (max-width: 455px){
+    body{
+        background-color: lightblue;
+    }
+
+    .boxes{
+        flex-direction: column;
+    }
+}
+
+/* @media not|only mediatype and (expressions) {
+    CSS-Code;
+} */

@@ -1,0 +1,213 @@
+ @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+ .logo img {
+     width: 164px;
+ }
+
+ nav {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     font-family: "Segoe UI";
+ }
+
+ .right ul {
+     display: flex;
+     gap: 34px;
+ }
+
+ .right ul li {
+     list-style: none;
+     display: flex;
+     align-items: center;
+     cursor: pointer;
+ }
+
+ .right ul li span {
+     padding: 0 5px;
+ }
+
+ main .heading {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 100px 0 0 0;
+     gap: 10px;
+ }
+
+ main .heading h9 {
+     font-family: 'Poppins', sans-serif;
+     font-size: 3vh;
+     opacity: 70%;
+ }
+
+ main .heading p {
+     opacity: 60%;
+     font-family: 'Poppins', sans-serif;
+ }
+
+ .first {
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     gap: 23px;
+     margin: 70px;
+     font-family: sans-serif;
+ }
+
+ .first span {
+     font-size: 40px;
+ }
+
+ section span img {
+     width: 82px;
+     margin: 0 23px;
+ }
+
+ .first p {
+     font-size: 23px;
+     width: 44vw;
+     text-align: center;
+ }
+
+
+
+ .btn {
+     background: #00b6d1;
+     padding: 14px 16px;
+     color: white;
+     border: none;
+     border-radius: 6px;
+     font-weight: 700;
+     margin: 12px 0;
+     cursor: pointer;
+ }
+
+ .btn a {
+     text-decoration: none;
+     color: white;
+ }
+
+
+ main .grid {
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 0 0 200px 0;
+ }
+
+ main .grid .container .boxes {
+
+     height: auto;
+     width: auto;
+     /* border: 2px solid black; */
+     display: grid;
+     grid-template-columns: repeat(3, 300px);
+     grid-template-rows: repeat(3, 300px);
+     row-gap: 10px;
+     column-gap: 70px;
+     justify-items: center;
+     align-items: center;
+     /* padding: 100px; */
+
+
+ }
+
+ main .grid .container .boxes .box {
+     /* display: flex; */
+     /* border: 2px solid red; */
+     background-color: rgb(243, 248, 248);
+     height: 200px;
+     width: 350px;
+     /* align-content: center; */
+     justify-items: center;
+ }
+
+ main .grid .container .boxes .box h2 {
+     /* display: flex; */
+     padding-bottom: 70px;
+     font-weight: 900;
+     font-family: 'Poppins', sans-serif;
+     font-size: b;
+ }
+
+ main .grid .container .boxes .box .tab1 {
+     /* padding-left: 10px; */
+     padding: 15px;
+     margin: 3px;
+     background-color: rgb(63, 176, 213);
+     border-radius: 8px;
+
+ }
+
+
+
+ main .grid .container .boxes .box .tab2 {
+     padding: 15px;
+     margin: 3px;
+     background-color: rgb(88, 231, 88);
+     border-radius: 8px;
+
+ }
+
+ main .grid .container .boxes .box .icons {
+     /* display: flex; */
+     position: relative;
+     bottom: 20%;
+     /* padding: 10px; */
+     /* margin: 8px; */
+ }
+
+ main .grid .container .boxes .box .tab1 a,
+ .tab2 a {
+     text-decoration: none;
+     color: white;
+     font-weight: bold;
+     font-family: 'Poppins', sans-serif;
+ }
+
+
+ main .grid .container .boxes .box #subtittle {
+     font-weight: 100;
+     font-size: 15px;
+     opacity: 60%;
+     padding-top: 10px;
+     display: flex;
+     justify-content: center;
+ }
+
+ @media screen and (max-width: 1145px) {
+     .grid {
+         grid-template-columns: 1fr;
+     }
+
+     main .grid .container .boxes {
+         display: grid;
+         grid-template-columns: repeat(auto-fit, minmax(300px, 300px));
+         justify-content: center;
+         gap: 30px;
+     }
+ }
+
+
+ main .grid .container .boxes .box .tab1 :hover {
+     color: rgb(63, 176, 213);
+     text-decoration: underline;
+     text-shadow: 0px 0px 10px rgb(63, 176, 213);
+     transition: 0.3s;
+ }
+
+ main .grid .container .boxes .box .tab2 :hover {
+     color: rgb(88, 231, 88);
+     text-decoration: underline;
+     text-shadow: 0px 0px 10px rgb(88, 231, 88);
+     transition: 0.3s;
+ }
+
+ main .grid .container .boxes .box :hover {
+     background-color: white;
+     transition: 0.3s;
+     transform: scale(1.01);
+
+ }

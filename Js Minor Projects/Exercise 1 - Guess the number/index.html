@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess the number</title>
+</head>
+<body>
+    <!-- Write a Java Script program to generate a random number and store it in a Variable. The program then takes an input from the user to tell them whether the guess was Correct, greater or lesser than the original number. 100 - (no. of guesses) is the score of the user. The program is expected to terminate once the number is guessed Number should between 1 - 100. -->
+
+    <script>
+        // Generate a random number between 1 and 100
+        const randomNumber = Math.floor(Math.random() * 100) + 1;
+        let guess;
+        let attempts = 0;
+
+        // Function to prompt user for a guess
+        function guessNumber() {
+            guess = parseInt(prompt("Guess a number between 1 and 100:"));
+            attempts++;
+
+            if (guess === randomNumber) {
+                alert(`Congratulations! You've guessed the correct number ${randomNumber} in ${attempts} attempts. Your score is ${100 - attempts}.`);
+            } else if (guess < randomNumber) {
+                alert("Your guess is too low. Try again.");
+                guessNumber();
+            } else if (guess > randomNumber) {
+                alert("Your guess is too high. Try again.");
+                guessNumber();
+            } else {
+                alert("Please enter a valid number.");
+                guessNumber();
+            }
+        }
+
+        // Start the guessing game
+        guessNumber();
+    </script>
+
+</body>
+</html>

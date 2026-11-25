@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Specificity</title>
+
+    <!-- Specificity Calculation:
+    To calculate specificity, assign a value to each part of the selector:
+    . Universal Selector - 0
+    . Element selectors and pseudo-elements - 1
+    . Class selectors, attribute selectors, and pseudo-classes - 10
+    . ID selectors - 100
+    . Inine styles - 1000 -->
+
+    <style>
+        /* The Specificity of this selector is 1 */
+        h1 {
+            color: chocolate;
+        }
+
+        /* The Specificity of this selector is 1 + 10 = 11 */
+        h1.yellow {
+            color: yellow;
+        }
+
+        /* The Specificity of this selector is 10 */
+        .cred {
+            color: red;
+        }
+
+        /* The Specificity of this selector is 10 */
+        .cpurple {
+            color: purple;
+        }
+
+        /* This is an example of Attribute Selector and the Specificity of the selector is 10 */
+        /* [data-x=a]{
+            background-color: lightgreen;
+        } */
+
+        /* The specificity of this selector is 1 + 10 + 10 + 10 + 10 = 41 */
+        a.harryclass.rohan-class[href]:hover {
+            color: blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <h1 class="yellow cred cpurple" data-x="a">CSS Specificity</h1>
+    </div>
+</body>
+
+</html>
+
+<!-- Importance:
+The !important flag in CSS is used to give a particular style rule the highest level of importance, overriding any other competing styles. When you add !important to a CSS rule, it will take precedence over other rules affecting the same element, regardless of their specificity. For example, if you have:
+
+    p{
+        color: red !important;
+        
+    }
+
+    p{
+        color: blue;
+    }
+
+The tet in the <p> element will be red, not blue, because the !important flag makes that rule more important
+an !important at the end of a CSS value gets a specificity score of 10,000 points. This is the highest specificity that one individual item can get However, it's generally best to use !important sparingly, as it can make debugging and maintaining your stylesheets more complicated. It can override styles in ways that are hard to trace, leading to unexpected results. -->

@@ -1,0 +1,29 @@
+<!-- The Asynchronous Shopper:
+   Imagine you are building an online shopping application. Write an asynchronous function called placeOrder that simulates placing an order and returns a promise. The promise should resolve with an order confirmation message after a random delay. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function placeOrder(){
+            return new Promise((resolve) =>{
+                const delay = Math.floor(Math.random() * 2000) + 1000; // Random delay between 1 and 3 seconds
+                setTimeout(() =>{
+                    resolve("Order placed successfully!");
+                }, delay);
+            });
+        }
+
+        placeOrder().then(message => {
+            console.log(message);
+        });
+
+        
+    </script>
+</body>
+</html>

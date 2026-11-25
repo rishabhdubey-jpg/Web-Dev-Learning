@@ -1,0 +1,175 @@
+ <!-- Write a javascript program to pretend to look like a hacker. Write an async function which will simply display the following output:
+
+Initialising Hack program...
+Hacking Ashish^15 username...
+Username found: aashish 17 ...
+Connecting to Facebook ...
+Try to use HTML & styling if possible -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacker Simulator</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;
+            color: #00ff00;
+            font-family: "Courier New", monospace;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .terminal {
+            width: 800px;
+            max-width: 100%;
+            min-height: 450px;
+            background: #050505;
+            border: 1px solid #00ff00;
+            border-radius: 10px;
+            box-shadow: 0 0 30px rgba(0, 255, 0, 0.25);
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: #111;
+            padding: 12px 18px;
+            border-bottom: 1px solid #00ff00;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #00ff00;
+        }
+
+        .terminal-title {
+            margin-left: 8px;
+            color: #aaa;
+            font-size: 14px;
+        }
+
+        #output {
+            padding: 25px;
+            line-height: 1.8;
+            font-size: 17px;
+            white-space: pre-wrap;
+        }
+
+        .line {
+            margin-bottom: 10px;
+        }
+
+        .cursor {
+            display: inline-block;
+            width: 10px;
+            height: 18px;
+            background: #00ff00;
+            animation: blink 0.7s infinite;
+            vertical-align: middle;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 600px) {
+            #output {
+                font-size: 14px;
+                padding: 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="terminal">
+
+        <div class="terminal-header">
+            <div class="dot"></div>
+            <div class="terminal-title">hack-terminal</div>
+        </div>
+
+        <div id="output"></div>
+
+    </div>
+
+
+    <script>
+
+        // Wait for a certain amount of time
+        function wait(seconds) {
+            return new Promise((resolve) => {
+                setTimeout(resolve, seconds * 1000);
+            });
+        }
+
+
+        // Display text on the terminal
+        function showMessage(message) {
+            const output = document.getElementById("output");
+
+            const line = document.createElement("div");
+            line.classList.add("line");
+
+            line.textContent = "> " + message;
+
+            output.appendChild(line);
+        }
+
+
+        // Async hacker program
+        async function hackerProgram() {
+
+            showMessage("Initialising Hack program...");
+            await wait(2);
+
+            showMessage("Hacking Ashish^15 username...");
+            await wait(2);
+
+            showMessage("Username found: aashish 17 ...");
+            await wait(2);
+
+            showMessage("Connecting to Facebook ...");
+            await wait(2);
+
+            showMessage("Connection established.");
+            await wait(1);
+
+            showMessage("Accessing account...");
+            await wait(2);
+
+            showMessage("Just kidding! 😄 This is only a simulation.");
+
+            const cursor = document.createElement("span");
+            cursor.classList.add("cursor");
+
+            document.getElementById("output").appendChild(cursor);
+        }
+
+
+        // Start the program
+        hackerProgram();
+
+    </script>
+
+</body>
+</html>

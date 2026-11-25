@@ -1,0 +1,17 @@
+{
+  "name": "backend-85",
+  "version": "1.0.0",
+  "description": "this is a first backend's tutorial",
+  "keywords": [
+    "backendd",
+    "play"
+  ],
+  "license": "ISC",
+  "author": "rishabh",
+  "type": "commonjs",
+  "main": "myserver.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  }
+}
